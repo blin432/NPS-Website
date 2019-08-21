@@ -1,0 +1,193 @@
+body {
+    text-align: center;
+}
+
+/* Loading animation */
+.placeholder {
+    zoom: .5;
+}
+
+/* Navbar and header image */
+.navbar {
+    border: 1px solid lightgrey;
+    border-top: none;
+    border-radius: 6px;
+    justify-content: inherit
+}
+.navbar-nav {
+    flex-direction: row;
+    position: absolute;
+    right: 20px
+}
+.text {
+    font-size: 16px;
+}
+#jumbo-image {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+#quote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%; 
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    font-weight: 200;
+    padding-bottom: 1rem;
+}
+.vert-center {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+div.sticky {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+}
+.dropdown-menu {
+    width: 500px;
+}
+.navbar-brand {
+    font-size: 19.25px;
+}
+#info-hidden {
+    display:none;
+    font-size: 14px;
+}
+
+/* Card styles */
+.myCol {
+    margin: 0px;
+    padding: 0px;
+    margin: auto;
+}
+.card {
+    text-align: left;
+    margin: auto;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+.card-img-top {
+    overflow: hidden;
+    object-fit: cover;
+    height: 200px;
+}
+.module {
+    height: 192px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+input[type="checkbox"] {
+    zoom: 3;
+    z-index: 10;
+}
+.form-check {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+}
+.btn-success {
+    margin: auto;
+}
+.card-text {
+    font-size: 13px;
+    text-align: left;
+}
+#card-position {
+    position: relative;
+}
+#white-fade {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+    height: 100px;
+    width: 286px;
+}
+
+/* Modal */
+.modal-body {
+    padding: 8px 1rem;
+}
+.w-100 {
+    width: 100%;
+    Height: 250px;
+    object-fit: cover;
+}
+.modal-img {
+    width: 100%;
+    Height: 300px;
+    object-fit: cover;
+}
+
+/* filter buttons */
+#position {
+    position: relative;
+}
+#filter {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+#reset {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+.hide-card {
+    display: none;
+}
+.show-card {
+    display: block;
+}
+
+/* mobile phones */
+#quote-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+#github-link {
+    display: none;
+}
+#about-link {
+    display: none;
+    margin-right: 20px;
+}
+
+/* tablets */
+@media only screen and (min-width: 767px) {
+    #quote-photo {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+    #quote {
+        font-size: 24px;
+    }
+    #github-link {
+        display: inline-block;
+    }
+    #about-link {
+        display: inline-block;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+}
+
+/* large screens */
+@media only screen and (min-width: 1200px) {
+    #quote-photo {
+        width: 100%;
+        height: 550px;
+        object-fit: cover;
+    }
+    #quote {
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "nps-website",
+  "version": "1.0.0",
+  "description": "This web application tracks the users visits to US national parks. You can view it [here](https://1cbondy1.github.io/NPS-Website/).",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1Cbondy1/NPS-Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1Cbondy1/NPS-Website/issues"
+  },
+  "homepage": "https://github.com/1Cbondy1/NPS-Website#readme",
+  "keywords": [],
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "mysqldump": "^2.3.0"
+  }
+}
