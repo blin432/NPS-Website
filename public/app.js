@@ -204,6 +204,8 @@ function parksVisited() {
 }
 
 // funtions for auth (will refactor)
+//done in sequelize
+//coodinate with jaws DB mySQL
 
 function showLoginForm(){
     signUpButton.style.setProperty("display","none");
@@ -248,6 +250,8 @@ function loginToExistingAccount(){
     });
 }
 
+
+//coordinate ID in html
 function editAppear(editIndex){
     var showChangeButton= document.getElementById(`save-button${editIndex}`);
     var showEditField = document.getElementById(`edit-field${editIndex}`);
