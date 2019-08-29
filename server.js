@@ -201,43 +201,13 @@ app.put('/schedule/put',isAuthenticated,function(req,res,next){
     .catch(next);
 });
 
-app.get('/schedule/get',isAuthenticated,function(req, res,next){
-    db.schedule.findAll({
-        
-       order:[['hours','DESC']]
-    }) 
-        .then(function(results){
-            res.json(results);      
-    });  
-});
 
-app.post('/schedule/post',isAuthenticated,function(req, res,next){
-    db.schedule.create({name:req.body.name,event:req.body.event,hours:req.body.hours})
-        .then(function(user){
-            res.json({username:req.body.name});///res.json sends information to front end
-            return next();  
-        }).catch(function(err){
-            console.log(err);
-    });
-});
+app.get ('/schedule/put', isAuthenticated,function(req,res,next){
+    db.schedule.update
+})
 
 
 
-app.delete('/schedule/delete/:id',isAuthenticated,function(req,res,next){
-        console.log(req.params);
-        db.schedule.destroy({
-            where: {
-               id: req.params.id //this will be your id that you want to delete
-            }
-            }).then(function(rowDeleted){
-            if(rowDeleted === 1){
-              console.log('Deleted successfully');
-              res.json({status:'deleted'});
-            };
-            }, function(err){
-             console.log(err);
-            });
-});
 
 var PORT = process.env.PORT || 3000;
 
