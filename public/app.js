@@ -207,6 +207,27 @@ function parksVisited() {
 //done in sequelize
 //coodinate with jaws DB mySQL
 
+
+///selector for html
+var signUpForm = document.getElementById("sign-up-form");
+var logInForm = document.getElementById("log-in-form");
+var loginButton = document.getElementById("log-in-button");
+var signUpButton = document.getElementById("sign-up-button");
+var createAccountButton = document.getElementById("create-account-button");
+var authBox = document.getElementById("auth-box");
+var existingMember = document.getElementById('existing-member');
+var signUpBox = document.getElementById("sign-up");
+var userName = document.getElementById("sign-up-username");
+var userEmail = document.getElementById("sign-up-email");
+var userPassword = document.getElementById("sign-up-password");
+var loginEmail = document.getElementById("login-email");
+var loginPw = document.getElementById("login-password");
+var user = document.getElementById("name-for-schedule");
+var hours = document.getElementById("hours-for-schedule");
+var event = document.getElementById("event-for-schedule");
+var time = document.getElementById("time-for-schedule");
+var scheduleShow = document.getElementById("show-schedule");
+
 function showLoginForm(){
     signUpButton.style.setProperty("display","none");
     signUpBox.style.setProperty("display","none");
