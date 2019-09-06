@@ -222,11 +222,7 @@ var userEmail = document.getElementById("sign-up-email");
 var userPassword = document.getElementById("sign-up-password");
 var loginEmail = document.getElementById("login-email");
 var loginPw = document.getElementById("login-password");
-var user = document.getElementById("name-for-schedule");
-var hours = document.getElementById("hours-for-schedule");
-var event = document.getElementById("event-for-schedule");
-var time = document.getElementById("time-for-schedule");
-var scheduleShow = document.getElementById("show-schedule");
+
 
 function showLoginForm(){
     signUpButton.style.setProperty("display","none");
