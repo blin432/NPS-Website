@@ -217,7 +217,7 @@ var createAccountButton = document.getElementById("create-account-button");
 var authBox = document.getElementById("auth-box");
 var existingMember = document.getElementById('existing-member');
 var signUpBox = document.getElementById("sign-up");
-var userName = document.getElementById("sign-up-username");
+
 var userEmail = document.getElementById("sign-up-email");
 var userPassword = document.getElementById("sign-up-password");
 var loginEmail = document.getElementById("login-email");
@@ -268,10 +268,4 @@ function loginToExistingAccount(){
 }
 
 
-//coordinate ID in html
-function editAppear(editIndex){
-    var showChangeButton= document.getElementById(`save-button${editIndex}`);
-    var showEditField = document.getElementById(`edit-field${editIndex}`);
-    showChangeButton.style.setProperty("display","block");
-    showEditField.style.setProperty("display","block");
-}
+

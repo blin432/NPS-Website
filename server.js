@@ -155,6 +155,9 @@ passport.deserializeUser(function(cookie,done){
         });
 });
 
+
+//accessed using sequelize 
+//need to refactor for this project
 app.post('/auth/register',function(req,res,next){ 
         console.log(req.body);
         var hashedPw=bcrypt.hashSync(req.body.password,10);
@@ -207,7 +210,7 @@ app.get ('/schedule/put', isAuthenticated,function(req,res,next){
 })
 
 
-
+//coodinate port with original project port
 
 var PORT = process.env.PORT || 3000;
 
