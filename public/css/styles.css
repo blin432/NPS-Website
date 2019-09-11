@@ -191,3 +191,19 @@ input[type="checkbox"] {
         font-size: 32px;
     }
 }
+
+
+
+/* sign up/loginform */
+
+#sign-up-form button, #log-in-form button, 
+#verify-code-button,#create-account-button,
+#send-code-button{
+margin-bottom:15px;
+border:1px solid black;
+text-shadow:
+1px 1px #000,
+1px 1px #000,
+1px 1px #000,
+1px 1px #000;
+}
