@@ -38,6 +38,9 @@
                 <a id="about-link">About</a>
             </li>
             <li class="nav-item">
+                <a id="about-link" href="login.html">Login In</a>
+            </li>
+            <li class="nav-item">
                 <a href="https://github.com/1Cbondy1/NPS-Website" id="github-link">GitHub Repo</a>
             </li>
         </ul>
@@ -69,63 +72,7 @@
     <!-- Modal -->
     <div id="modal-div"></div>
 
-    <!--loggin-->
-    <nav class="navbar navbar-expand-lg border-bottom shadow-sm navbar-dark d-flex flex-row justify-content-between">
-        <a class="navbar-brand" href="#">MOM'D</a> 
-        <div >
-            <button  onclick="logOutButton()">HOME</button>
-        </div>
-     </nav> 
-    <div class="text-center mt-5 pt-3">
-            <div id ="existing-member" style="display:block;">
-                <p class="login-text">Already a Member?</p>
-                <div class="buttons">
-                    <button onclick="showLoginForm()" id="log-in-button" >Log in</button>
-                </div>   
-            </div>
-            <div id="sign-up" class="mt-4" style="display:block;">
-                    <p class="login-text">New Member?</p>
-                    <div class="buttons">
-                        <button onclick="showSignUpForm()" id="sign-up-button">Sign up</button>
-                    </div>
-            </div>
-    </div>
 
-    <div class="main-wrapper shadow-lg container-fluid  d-flex flex-column align-items-center text-center">
-    
-        <div id="auth-box" class="auth-box shadow-lg p-3" style="display:none; background-color:white;">
-
-                <div id="sign-up-form" class="col text-center" style="display:none;">
-
-                            <label for="sign-up-username">Username</label>
-                            <input required="true" type="text" class="form-control" id="sign-up-username" name="sign-up-username" placeholder="username"> 
-                    
-                            <label for="sign-up-email">Email address</label>
-                            <input required="true" type="email" class="form-control" id="sign-up-email" name="sign-up-email" placeholder="email@inbox.com">                      
-
-                            <label for="sign-up-password">Password</label>
-                            <input required="true" type="password" class="form-control" id="sign-up-password" name="sign-up-password" placeholder="Password">
-
-                            
-                            <button  class = "mt-3" style ="margin-left:60px;" onclick="createNewAccount()" id="create-account-button" >Sign Up</button>
-                            <button  class = "mt-2" onclick="cancel()">Cancel</button>
-                </div>
-
-                <div id="log-in-form" class="col text-center mt-2 p-3" style="display:none;">
-                    
-                            <label for="login-email">Email</label>
-                            <input type="email" class="form-control" id="login-email" name="login-email" placeholder="">                      
-                       
-
-                            <label for="login-password">Password</label>
-                            <input type="password" class="form-control" id="login-password" name="login-password" placeholder="">
-                        
-                            <button   class= "mt-3" onclick="loginToExistingAccount()">Log in</button>
-                            <button   class= "mt-3" onclick="cancel()" >Cancel</button>
-                </div>
-
-            </div>
-        </div> 
     <div class="footer">
          
     </div>
