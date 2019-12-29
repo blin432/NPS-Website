@@ -1,14 +1,31 @@
 // Dependencies
 const express = require("express");
 const mysql = require("mysql");
-
-var PORT = 3002;
+const bodyParser = require('body-parser');
+const bcrypt = require('bcryptjs');
+const passport =require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const session = require('express-session');
+const db= require('./db.js'); 
 
 // Initialize Express
 const app = express();
 
 // Set up a static folder (public) for our web app
 app.use(express.static("public"));
+app.use (bodyParser.json());
+app.use (bodyParser.urlencoded({extended:true}));
+
+//uses sesion for cookies
+app.use(session({
+    secret:'password'
+    // resave: true,
+    // saveUninitialized: true
+}));
+
+app.use(express.static(__dirname + '/public'));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -70,19 +87,8 @@ app.listen(process.env.PORT || PORT, function() {
     console.log("App running on port " + PORT + "!");
 });
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const bcrypt = require('bcryptjs');
-const passport =require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const session = require('express-session');
-const db= require('./config/db.config.js'); 
 
-const app = express();
 
-//sets the ejs and where to look for ejs template
-app.set('view engine', 'ejs');
-app.set ('views','views/pages'); 
 
 app.use (bodyParser.json());
 app.use (bodyParser.urlencoded({extended:true}));
@@ -214,8 +220,6 @@ app.get ('/schedule/put', isAuthenticated,function(req,res,next){
 
 var PORT = process.env.PORT || 3000;
 
-db.sequelize.sync().then(function(){
-    app.listen(PORT,function(){ 
-        console.log(`listening on port ${PORT}..`);
-    });
+app.listen(PORT,function(){ 
+  console.log(`listening on port ${PORT}..`);
 });

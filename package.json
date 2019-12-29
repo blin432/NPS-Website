@@ -19,8 +19,13 @@
   "keywords": [],
   "dependencies": {
     "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
     "express": "^4.16.4",
+    "express-session": "^1.17.0",
     "mysql": "^2.16.0",
-    "mysqldump": "^2.3.0"
+    "mysqldump": "^2.3.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pg-promise": "^10.3.2"
   }
 }
