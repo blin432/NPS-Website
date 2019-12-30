@@ -27,6 +27,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -79,19 +80,9 @@ app.put("/checked/:id", function(req, res) {
     });
 });
 
-
-
 //auth server recator to clay's work
 // Start the server
-app.listen(process.env.PORT || PORT, function() {
-    console.log("App running on port " + PORT + "!");
-});
 
-
-
-
-app.use (bodyParser.json());
-app.use (bodyParser.urlencoded({extended:true}));
 
 //uses sesion for cookies
 app.use(session({
@@ -101,16 +92,7 @@ app.use(session({
 }));
 
 //specifies what folder to use for express
-app.use(express.static(__dirname + '/public'));
-app.use(passport.initialize());
-app.use(passport.session());
 
-
-app.get('/login', function(req,res){
-    res.render('login', {
-        title : 'Login page'
-    });
-});
 
 app.get('/', function(req, res) {
     res.render('home', {
@@ -125,44 +107,8 @@ app.get('/dashboard',isAuthenticated,function(req, res,next) {
 });
 
 
-passport.use(new LocalStrategy({usernameField:'email'},function(email,password,done){
-    db.users.findAll({where:{email:email}})
-        .then(function(results){
-            var fetchedPw= results[0].dataValues.password;//console log results to see how to get password
-            console.log(results[0].dataValues.password);
-            var isPwMatch = bcrypt.compareSync(password,fetchedPw)//takes hash and compares it to password
-            if (isPwMatch){
-            console.log('match');
-            done(null,results)
-            }else{
-            console.log("did not");
-            done(null,false);
-            }
-            }).catch(function(err){
-            console.log(err);
-            done(null, false)//null, is for error,passing in false means "note a succsefull login"
-            });  
-}));
-
-// have to tell what goes in the cookie
-passport.serializeUser(function(user,done){
-    done(null,{
-        id: user.id,
-        email:user.email
-    });
-});
-
-//when server needs to read a cookie, tells what the user should be 
-passport.deserializeUser(function(cookie,done){
-    db.users.findAll({where:{id:cookie.id}})
-        .then(function(user){
-            console.log(user);
-            done(null,user)
-        });
-});
 
 
-//accessed using sequelize 
 //need to refactor for this project
 app.post('/auth/register',function(req,res,next){ 
         console.log(req.body);
@@ -192,28 +138,11 @@ function isAuthenticated(req,res,next){
     }
 }
 
-
 app.get('/auth/logout', function (req, res) {
     res.json({URL:'/'});
     req.logout();
 });
  
-//isAuthenticated uses cookie and session to see if logged in or authenticated see function isAuthenticated
-app.put('/schedule/put',isAuthenticated,function(req,res,next){
-    db.schedule.update(
-        {event:req.body.event},
-        { where: { id: req.body.id } }
-    )
-    .then(function(rowsUpdate){
-        res.json(req.body);
-    })
-    .catch(next);
-});
-
-
-app.get ('/schedule/put', isAuthenticated,function(req,res,next){
-    db.schedule.update
-})
 
 
 //coodinate port with original project port
@@ -221,5 +150,5 @@ app.get ('/schedule/put', isAuthenticated,function(req,res,next){
 var PORT = process.env.PORT || 3000;
 
 app.listen(PORT,function(){ 
-  console.log(`listening on port ${PORT}..`);
+ console.log(`listening on port ${PORT}..`);
 });

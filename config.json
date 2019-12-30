@@ -3,7 +3,7 @@
     "username": "root",
     "password": "root",
     "database": "nps_db",
-    "port": 8889,
+    "port": 8081,
     "host": "localhost",
     "dialect": "mysql"
   },
